@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contador - Contador de Palavras e Caracteres</title>
+  
+  <!-- PWA & Meta Tags -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="description" content="Contador minimalista de palavras, caracteres, linhas e frases com PWA offline.">
+  
+  <!-- Favicon & Icons -->
+  <link rel="icon" type="image/svg+xml" href="logo.svg">
+  <link rel="apple-touch-icon" href="icon-192.png">
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Cabeçalho -->
+  <header class="app-header">
+    <div class="logo-container">
+      <img src="logo.svg" alt="Logo Contador" class="logo-img">
+      <h1 class="app-title">Contador</h1>
+    </div>
+
+    <!-- Alternar Tema Claro/Escuro -->
+    <button id="theme-toggle" class="btn-icon" aria-label="Alternar Modo Claro/Escuro" title="Alternar Modo Claro/Escuro">
+      <span class="icon-theme">🌓</span>
+    </button>
+  </header>
+
+  <!-- Conteúdo Principal -->
+  <main class="app-main">
+    
+    <!-- Estatísticas em Tempo Real -->
+    <section class="stats-grid">
+      <div class="stat-card">
+        <span class="stat-value" id="stat-words">0</span>
+        <span class="stat-label">Palavras</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-value" id="stat-chars">0</span>
+        <span class="stat-label">Caracteres</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-value" id="stat-lines">0</span>
+        <span class="stat-label">Linhas</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-value" id="stat-sentences">0</span>
+        <span class="stat-label">Frases</span>
+      </div>
+    </section>
+
+    <!-- Área de Entrada de Texto -->
+    <section class="input-section">
+      <textarea id="text-input" rows="10" placeholder="Digite ou cole seu texto aqui... A contagem é atualizada em tempo real."></textarea>
+    </section>
+
+    <!-- Barra de Botões -->
+    <section class="actions-bar">
+      <!-- Botão Copiar (Mãozinha Aberta) -->
+      <button id="btn-copy" class="btn-action" title="Copiar Texto">
+        <span class="hand-icon">🖐️</span>
+        <span>Copiar</span>
+      </button>
+
+      <!-- Botão Limpar (Mãozinha Fechada) -->
+      <button id="btn-clear" class="btn-action" title="Limpar Texto">
+        <span class="hand-icon">✊</span>
+        <span>Limpar</span>
+      </button>
+    </section>
+
+    <!-- Notificação Flutuante (Toast) -->
+    <div id="toast" class="toast hidden" role="status" aria-live="polite">
+      Ação realizada com sucesso!
+    </div>
+
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
